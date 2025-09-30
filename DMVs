@@ -1,0 +1,14 @@
+select * from sys.sysprocesses
+select * from sys.dm_exec_requests
+select * from sys.dm_db_file_space_usage
+
+- - Indexes
+select object_name(object_id) as TableName, * from sys.dm_db_index_usage_stats
+where db_name(database_id) = ‘dbname'
+
+select * from sys.dm_db_index_physical_stats(NULL, NULL, NULL, NULL, NULL)
+
+- - OS
+select * from sys.dm_os_performance_counters
+select * from sys.dm_os_sys_info
+select * from sys.dm_os_windows_info
